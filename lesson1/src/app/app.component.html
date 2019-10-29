@@ -1,0 +1,47 @@
+<button (click)="mouseClick()">
+  Click me
+</button>
+
+<br>
+
+<input type="text" (input)="onInput($event)">
+
+<br>
+
+{{inputedValue}}
+
+
+<br>
+<br>
+
+<button (click)="changeStatus()">Change Sts</button>
+
+<div *ngIf="status">
+  True
+</div>
+
+
+<div *ngIf="!status">
+  False
+</div>
+
+
+<button (click)="incremI()">
+  I++
+</button>
+
+<div [ngSwitch]="numb">
+  <h1 *ngSwitchCase="1"> First {{numb}}</h1>
+  <h1 *ngSwitchCase="2">Second {{numb}}</h1>
+  <h1 *ngSwitchCase="3">Third {{numb}}</h1>
+  <h1 *ngSwitchDefault>Default {{numb}}</h1>
+</div>
+
+
+<div *ngFor="let user of users" style="border: 2px solid green; padding: 20px">
+  Name: {{user.name}}
+  <br>
+  Car: {{user.car}}
+  <br>
+  <br>
+</div>

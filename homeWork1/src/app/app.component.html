@@ -1,0 +1,39 @@
+<div class="container">
+
+<input type="text" (input)="onInput($event)">
+<button (click)="Click()">Search</button>
+
+<br>
+{{searchValues}}
+
+<br>
+
+<button (click)="reg()">Sign up</button>
+<button (click)="log()">Login</button>
+
+<div *ngIf="isReg">
+  Registration put your email <br>
+  <input  type="text" name="email"> <br>
+  name please <br>
+  <input type="text" name="name"> <br>
+  password <br>
+  <input type="text" name="password"> <br>
+</div>
+
+<div *ngIf="isLog">
+  Login email <br>
+  <input  type="text" name="email"><br>
+  password <br>
+  <input type="text" name="password"><br>
+</div>
+
+<div class="home" *ngFor="let home of homes">
+ City: {{home.city}}
+  <br>
+  Street: {{home.street}}
+  <br>
+  Square: {{home.square}}
+</div>
+
+</div>
+

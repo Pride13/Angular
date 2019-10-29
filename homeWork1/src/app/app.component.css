@@ -1,0 +1,11 @@
+.container {
+  width: 500px;
+  margin: 20px auto;
+
+}
+
+.home {
+  border: 2px solid green;
+  background: aqua;
+
+}

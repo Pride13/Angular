@@ -1,0 +1,135 @@
+<div class="container">
+
+<input type="text" (input)="onInput($event)">
+<button (click)="Click()">Search</button>
+
+<br>
+{{searchValues}}
+
+<br>
+
+<button (click)="reg()">Sign up</button>
+<button (click)="log()">Login</button>
+  <button (click)="createHouse()">Create house</button>
+
+<form *ngIf="isReg" (ngSubmit)="userToReg(usToReg)" #usToReg="ngForm">
+
+  <br>
+  <label [ngStyle]="{color: emailInput.invalid && emailInput.touched ? 'red' : 'black'}">
+  Type your email <br>
+  </label>
+
+  <input  type="text" name="email" [(ngModel)]="userToRegister.email"
+          #emailInput = "ngModel"
+          email
+          required
+  ><br>
+
+  <label [ngStyle]="{color: nameInput.invalid && nameInput.touched ? 'red' : 'black'}">
+  Name <br>
+  </label>
+
+  <input type="text" name="name" [(ngModel)]="userToRegister.name"
+         #nameInput = "ngModel"
+         minlength="3"
+         required
+  ><br>
+
+  <label [ngStyle]="{color: passwordInput.invalid && passwordInput.touched ? 'red' : 'black'}">
+  password <br>
+  </label>
+
+  <input type="text" name="password" [(ngModel)]="userToRegister.password"
+         #passwordInput = "ngModel"
+         minlength="5"
+         required
+  ><br>
+
+  <button [disabled]="!usToReg.valid">Submit</button>
+</form>
+
+  <p>{{userFind}}</p>
+
+<form *ngIf="isLog" (ngSubmit)="userToLog(usToLog)" #usToLog="ngForm">
+
+  <label [ngStyle]="{color: emailInput.invalid ? 'red' : 'black'}">
+  Login email <br>
+  </label>
+
+  <input type="text" name="email" [(ngModel)]="userToLogin.email"
+         #emailInput = "ngModel"
+         email
+  ><br>
+
+  <label [ngStyle]="{color: passwordInput.invalid ? 'red' : 'black'}">
+  password <br>
+  </label>
+
+  <input type="text" name="password" [(ngModel)]="userToLogin.password"
+         minlength="5"
+         #passwordInput = "ngModel"
+  ><br>
+
+  <button [disabled]="!usToLog.valid">Submit</button>
+</form>
+
+  <form *ngIf="crtHouse" (ngSubmit)="houseToReg(housToReg)" #housToReg="ngForm">
+
+    <label [ngStyle]="{color: cityInput.invalid ? 'red' : 'black'}">
+    Select your city <br>
+    </label>
+
+    <input type="text" name="city" [(ngModel)]="houseToRegister.city"
+           minlength="3"
+           #cityInput = "ngModel"
+    ><br>
+
+    <label [ngStyle]="{color: streetInput.invalid ? 'red' : 'black'}">
+    Select street <br>
+    </label>
+
+    <input type="text" name="street" [(ngModel)]="houseToRegister.street"
+           minlength="3"
+           #streetInput = "ngModel"
+    ><br>
+
+    <label [ngStyle]="{color: squareInput.invalid ? 'red' : 'black'}">
+    Select square meters <br>
+    </label>
+    <input type="text" name="square" [(ngModel)]="houseToRegister.square"
+           minlength="2"
+           #squareInput = "ngModel"
+
+    ><br>
+
+    <button [disabled]="!housToReg.valid">Submit</button>
+  </form>
+
+
+
+  <br>
+  <br>
+<div class="home"
+     [ngStyle]="{borderColor: home.owner.is_blocked? 'red' : 'none'}"
+     *ngFor="let home of homes"
+>
+  City: {{home.city}}
+  <br>
+  Street: {{home.street}}
+  <br>
+  Square: {{home.square}}
+  <br>
+  <button (click)="showFullInfo(home.id)">Show full info</button>
+  <br>
+  <div *ngIf="showdlessInfo && home.id === showedHouseIndex">
+  Email: {{home.owner.email}}
+  <br>
+  Name: {{home.owner.name}}
+  <br>
+  Password: {{home.owner.password}}
+  </div>
+
+</div>
+
+</div>
+

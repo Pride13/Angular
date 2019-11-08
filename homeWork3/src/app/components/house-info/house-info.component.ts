@@ -9,6 +9,7 @@ export class HouseInfoComponent {
 
   showdlessInfo = false;
   showedHouseIndex: number;
+  curs = 24.8;
 
   constructor() { }
 

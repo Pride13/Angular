@@ -29,15 +29,15 @@ export class AppComponent {
   ];
 
   homes = [
-    {id: 1, city: 'Lviv', street: 'Ugorska', square: '250',
+    {id: 1, city: 'Lviv', street: 'Ugorska', price: 250000,
       owner: this.users[Math.floor(Math.random() * this.users.length)]},
-    {id: 2, city: 'Kyiv', street: 'Bandery', square: '86',
+    {id: 2, city: 'Kyiv', street: 'Bandery', price: 860000,
       owner: this.users[Math.floor(Math.random() * this.users.length)]},
-    {id: 3, city: 'Rivne', street: 'Rahivska', square: '110',
+    {id: 3, city: 'Rivne', street: 'Rahivska', price: 110000,
       owner: this.users[Math.floor(Math.random() * this.users.length)]},
-    {id: 4, city: 'IF', street: 'Upa', square: '59',
+    {id: 4, city: 'IF', street: 'Upa', price: 59000,
       owner: this.users[Math.floor(Math.random() * this.users.length)]},
-    {id: 5, city: 'Lutsk', street: 'Shuhevycha', square: '300',
+    {id: 5, city: 'Lutsk', street: 'Shuhevycha', price: 300000,
       owner: this.users[Math.floor(Math.random() * this.users.length)]}
   ];
 
@@ -58,7 +58,7 @@ export class AppComponent {
     id: 6,
     city: '',
     street: '',
-    square: '',
+    price: 0,
     owner: this.users[Math.floor(Math.random() * this.users.length)]
   };
 

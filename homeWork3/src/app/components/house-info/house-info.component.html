@@ -5,7 +5,7 @@
   <br>
   Street: {{someHouse.street}}
   <br>
-  Square: {{someHouse.square}}
+  Price: {{someHouse.price}}GRN, {{someHouse.price | currencyPipe: curs}}USD
   <br>
 
   <button (click)="showFullInfo(someHouse.id)">Show full info</button>

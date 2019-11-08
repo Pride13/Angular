@@ -1,0 +1,34 @@
+<form (ngSubmit)="thisUserToReg()" #usToReg="ngForm">
+
+<label [ngStyle]="{color: emailInput.invalid && emailInput.touched ? 'red' : 'black'}">
+  Type your email <br>
+</label>
+
+<input  type="text" name="email" [(ngModel)]="userToRegister.email"
+        #emailInput = "ngModel"
+        email
+        required
+><br>
+
+<label [ngStyle]="{color: nameInput.invalid && nameInput.touched ? 'red' : 'black'}">
+  Name <br>
+</label>
+
+<input type="text" name="name" [(ngModel)]="userToRegister.name"
+       #nameInput = "ngModel"
+       minlength="3"
+       required
+><br>
+
+<label [ngStyle]="{color: passwordInput.invalid && passwordInput.touched ? 'red' : 'black'}">
+  password <br>
+</label>
+
+<input type="text" name="password" [(ngModel)]="userToRegister.password"
+       #passwordInput = "ngModel"
+       minlength="5"
+       required
+><br>
+
+<button [disabled]="!usToReg.valid">Submit</button>
+</form>

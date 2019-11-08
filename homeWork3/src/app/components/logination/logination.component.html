@@ -1,0 +1,22 @@
+<form (ngSubmit)="userToLog()" #usToLog="ngForm">
+
+  <label [ngStyle]="{color: emailInput.invalid ? 'red' : 'black'}">
+    Login email <br>
+  </label>
+
+  <input type="text" name="email" [(ngModel)]="userToLogin.email"
+         #emailInput = "ngModel"
+         email
+  ><br>
+
+  <label [ngStyle]="{color: passwordInput.invalid ? 'red' : 'black'}">
+    password <br>
+  </label>
+
+  <input type="text" name="password" [(ngModel)]="userToLogin.password"
+         minlength="5"
+         #passwordInput = "ngModel"
+  ><br>
+
+  <button [disabled]="!usToLog.valid">Submit</button>
+</form>

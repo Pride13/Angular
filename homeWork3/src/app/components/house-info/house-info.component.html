@@ -1,0 +1,23 @@
+<div class="home"
+     [ngStyle]="{borderColor: someHouse.owner.is_blocked? 'red' : 'none'}"
+>
+  City: {{someHouse.city}}
+  <br>
+  Street: {{someHouse.street}}
+  <br>
+  Square: {{someHouse.square}}
+  <br>
+
+  <button (click)="showFullInfo(someHouse.id)">Show full info</button>
+
+  <br>
+  <div *ngIf="showdlessInfo && someHouse.id === showedHouseIndex">
+
+    Email: {{someHouse.owner.email}}
+    <br>
+    Name: {{someHouse.owner.name}}
+    <br>
+    Password: {{someHouse.owner.password}}
+  </div>
+
+</div>

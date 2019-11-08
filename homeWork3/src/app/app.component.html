@@ -1,0 +1,33 @@
+<div class="container">
+
+  <button (click)="reg()">Sign up</button>
+  <button (click)="log()">Login</button>
+  <button (click)="createHouse()">Create house</button>
+
+  <app-registration
+    *ngIf="isReg"
+    [userToRegister]="userToRegister"
+    (regUser)="userToReg($event)"
+  ></app-registration>
+
+  <p>{{userFind}}</p>
+
+<app-logination
+    *ngIf="isLog"
+    [userToLogin]="userToLogin"
+    (logUser)="userToLog($event)"
+></app-logination>
+
+  <app-house
+    *ngIf="crtHouse"
+    [houseToRegister] ="houseToRegister"
+    (regHouse) = "houseToReg($event)"
+  ></app-house>
+
+  <app-house-info
+    *ngFor="let home of homes"
+    [someHouse] = "home"
+  ></app-house-info>
+
+</div>
+

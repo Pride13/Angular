@@ -1,0 +1,31 @@
+<form (ngSubmit)="houseToReg()" #housToReg="ngForm">
+
+  <label [ngStyle]="{color: cityInput.invalid ? 'red' : 'black'}">
+    Select your city <br>
+  </label>
+
+  <input type="text" name="city" [(ngModel)]="houseToRegister.city"
+         minlength="3"
+         #cityInput = "ngModel"
+  ><br>
+
+  <label [ngStyle]="{color: streetInput.invalid ? 'red' : 'black'}">
+    Select street <br>
+  </label>
+
+  <input type="text" name="street" [(ngModel)]="houseToRegister.street"
+         minlength="3"
+         #streetInput = "ngModel"
+  ><br>
+
+  <label [ngStyle]="{color: squareInput.invalid ? 'red' : 'black'}">
+    Select square meters <br>
+  </label>
+  <input type="text" name="square" [(ngModel)]="houseToRegister.square"
+         minlength="2"
+         #squareInput = "ngModel"
+
+  ><br>
+
+  <button [disabled]="!housToReg.valid">Submit</button>
+</form>
